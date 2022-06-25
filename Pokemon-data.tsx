@@ -2,7 +2,7 @@ const POKEMON_DATA = [
   {
     id: "6oE5wV8uhvejBBsvlrTG",
     description:
-      "When several of these Pokemon gather, their electricity can cause lightning storms.",
+      "When several of these Pokemons gather, their electricity can cause lightning storms.",
     name: "Bulbasaur",
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/strangelove-challenge.appspot.com/o/charmander.png?alt=media&token=3ef6e57f-dd1e-4116-b3f6-f10215bef38e",

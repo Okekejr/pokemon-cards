@@ -59,10 +59,23 @@ function Homepage() {
 
   return (
     <Layout>
-      <h2>My Card Collection</h2>
+      <h2>My card collection</h2>
       <div className="card-container">{renderList()}</div>
     </Layout>
   );
 }
 
 export default Homepage;
+
+// export async function getServerSideProps() {
+//   const response = await fetch(
+//     "https://us-central1-strangelove-challenge.cloudfunctions.net/cards"
+//   );
+//   const data = await response.json();
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }

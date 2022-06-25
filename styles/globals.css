@@ -40,13 +40,13 @@ h1 {
 }
 
 h2 {
-  border: 2px solid #000;
-  background-color: #000;
+  border: 2px solid #fff;
+  background-color: #fff;
   padding: 0.5rem;
-  width: 20rem;
+  width: auto;
   margin: 0rem auto 2rem auto;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 
 .remove-button {

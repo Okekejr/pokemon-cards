@@ -27,7 +27,6 @@ const NewPokemon = () => {
 
   const saveData = async () => {
     let data = { name, description, imageUrl };
-    console.log(data);
 
     const postReq = await fetch(
       "https://us-central1-strangelove-challenge.cloudfunctions.net/cards",
@@ -38,7 +37,7 @@ const NewPokemon = () => {
       }
     );
     const updatedData = await postReq.json();
-    console.log(updatedData);
+
   };
   return (
     <Layout>
