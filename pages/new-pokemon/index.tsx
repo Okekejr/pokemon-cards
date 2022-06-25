@@ -7,6 +7,7 @@ const NewPokemon = () => {
   const [name, setname] = useState("");
   const [description, setdescription] = useState("");
   const [imageUrl, setimageUrl] = useState("");
+  const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   const nameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newname = event.currentTarget.value;
@@ -38,6 +39,16 @@ const NewPokemon = () => {
     );
     const updatedData = await postReq.json();
 
+    if (postReq.status === 200) {
+      setDeleteSuccess(true);
+      setname("");
+      setdescription("");
+      setimageUrl("");
+
+      setTimeout(() => {
+        setDeleteSuccess(false);
+      }, 1500);
+    }
   };
   return (
     <Layout>
@@ -70,6 +81,7 @@ const NewPokemon = () => {
           <div className={classes.actions}>
             <button onClick={saveData}>Add Pokemon</button>
           </div>
+          {deleteSuccess && <div>Pokemon added!</div>}
         </div>
       </Card>
     </Layout>

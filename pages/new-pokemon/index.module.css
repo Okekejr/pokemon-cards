@@ -38,6 +38,7 @@
   border-radius: 15px;
   font-weight: bold;
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .actions button:hover,

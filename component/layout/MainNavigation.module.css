@@ -37,3 +37,13 @@
 .header a.active {
   color: white;
 }
+
+.newPokemon {
+  width: 100% !important;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #77002e;
+  padding: 0 10%;
+}
