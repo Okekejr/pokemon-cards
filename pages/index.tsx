@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Layout from "../component/layout/Layout";
-import { CirclesWithBar } from "react-loader-spinner"
+import { CirclesWithBar } from "react-loader-spinner";
 
 interface Istate {
   empty: {
@@ -48,9 +48,11 @@ function Homepage() {
   };
 
   if (cards.length === 0) {
-    return <div className="spinner">
-      <CirclesWithBar color="#77002e" />
-    </div>
+    return (
+      <div className="spinner">
+        <CirclesWithBar color="#77002e" />
+      </div>
+    );
   }
 
   const renderList = (): JSX.Element[] => {

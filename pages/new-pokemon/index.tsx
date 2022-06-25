@@ -26,8 +26,10 @@ const NewPokemon = () => {
     setimageUrl(newimageUrl);
   };
 
-  const saveData = async () => {
-    let data = { name, description, imageUrl };
+  const saveData = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const data = { name, description, imageUrl };
 
     const postReq = await fetch(
       "https://us-central1-strangelove-challenge.cloudfunctions.net/cards",
@@ -54,35 +56,42 @@ const NewPokemon = () => {
     <Layout>
       <h2>Add a Card</h2>
       <Card>
-        <div className={classes.contents}>
-          <div className={classes.control}>
-            <label htmlFor="name">Title</label>
-            <input type="text" required value={name} onChange={nameHandler} />
+        <form onSubmit={saveData}>
+          <div className={classes.contents}>
+            <div className={classes.control}>
+              <label htmlFor="name">Title</label>
+              <input
+                type="text"
+                required={true}
+                value={name}
+                onChange={nameHandler}
+              />
+            </div>
+            <div className={classes.control}>
+              <label htmlFor="description">Description</label>
+              <textarea
+                required={true}
+                rows={5}
+                value={description}
+                onChange={descriptionHandler}
+              ></textarea>
+            </div>
+            <div className={classes.control}>
+              <label htmlFor="image">Image URL</label>
+              <input
+                type="url"
+                required
+                id="image"
+                value={imageUrl}
+                onChange={imageUrlHandler}
+              />
+            </div>
+            <div className={classes.actions}>
+              <button>Add Pokemon</button>
+            </div>
+            {deleteSuccess && <div>Pokemon added!</div>}
           </div>
-          <div className={classes.control}>
-            <label htmlFor="description">Description</label>
-            <textarea
-              required
-              rows={5}
-              value={description}
-              onChange={descriptionHandler}
-            ></textarea>
-          </div>
-          <div className={classes.control}>
-            <label htmlFor="image">Image URL</label>
-            <input
-              type="url"
-              required
-              id="image"
-              value={imageUrl}
-              onChange={imageUrlHandler}
-            />
-          </div>
-          <div className={classes.actions}>
-            <button onClick={saveData}>Add Pokemon</button>
-          </div>
-          {deleteSuccess && <div>Pokemon added!</div>}
-        </div>
+        </form>
       </Card>
     </Layout>
   );
