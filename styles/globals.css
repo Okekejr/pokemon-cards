@@ -1,0 +1,54 @@
+/* styles go here */
+
+body {
+  background-color: #95afc0;
+}
+
+.card-container {
+  background-color: #fff;
+  width: 80rem;
+  margin: auto;
+}
+
+.card {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 55rem;
+}
+
+.line {
+  border: 1px solid #95afc0 ;
+  background-color: #95afc0;
+  border-width: 0.1rem;
+  width: 50.5rem;
+  margin: 0rem 74rem 0rem 4.5rem;
+}
+
+.img {
+  width: 20rem;
+}
+
+.texts {
+  width: 25rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  border: 2px solid #000;
+  background-color: #000;
+  padding: 0.5rem;
+  width: 20rem;
+  margin: 0rem auto 2rem auto;
+  text-align: center;
+  color: #fff;
+}
+
+.remove-button {
+  cursor: pointer;
+}
