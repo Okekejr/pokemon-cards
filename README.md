@@ -29,7 +29,7 @@ yarn run dev
 #### Live link
 
 ```
-
+http://pokemon-cards-kappa.vercel.app/
 ```
 
 ## Stack
