@@ -52,3 +52,38 @@ h2 {
 .remove-button {
   cursor: pointer;
 }
+
+/* media query */
+
+@media (max-width: 415px) and (min-width: 375px) {
+  .card-container {
+    background-color: #fff;
+    width: auto;
+    margin: auto;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+  .img {
+    margin-bottom: 2rem;
+  }
+  .texts {
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+  .line {
+    width: 18.5rem;
+    margin: auto;
+  }
+  
+}
+
+@media (max-width: 376px) and (min-width: 321px) {
+  .img {
+    width: 15rem;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+}

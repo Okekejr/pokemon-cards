@@ -1,3 +1,5 @@
+/* styles go here */
+
 .card {
   background-color: white;
   border-radius: 6px;
@@ -6,4 +8,13 @@
   height: 50rem;
   margin: auto;
   padding: 2rem;
+}
+
+/* media query */
+
+@media (max-width: 415px) and (min-width: 375px) {
+  .card {
+    width: auto;
+    height: 30rem;
+  }
 }

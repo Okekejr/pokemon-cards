@@ -1,3 +1,4 @@
+/* styles go here */
 
 .contents {
   width: 30rem;
@@ -43,4 +44,16 @@
 .actions button:active {
   background-color: #a50e48;
   border-color: #a50e48;
+}
+
+/* media query */
+
+@media (max-width: 415px) and (min-width: 375px) {
+  .contents {
+    width: auto;
+  }
+  .control input,
+  .control textarea {
+    width: 97%;
+  }
 }
