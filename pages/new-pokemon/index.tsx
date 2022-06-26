@@ -9,6 +9,7 @@ const NewPokemon = () => {
   const [imageUrl, setimageUrl] = useState("");
   const [deleteSuccess, setDeleteSuccess] = useState(false);
 
+  // handlers for the input forms
   const nameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newname = event.currentTarget.value;
     setname(newname);
@@ -26,9 +27,11 @@ const NewPokemon = () => {
     setimageUrl(newimageUrl);
   };
 
+  // POST request to the API
   const saveData = async (event: React.FormEvent) => {
     event.preventDefault();
 
+    // storing the form data into an object
     const data = { name, description, imageUrl };
 
     const postReq = await fetch(
@@ -41,6 +44,7 @@ const NewPokemon = () => {
     );
     const updatedData = await postReq.json();
 
+    // using IF statement to render user feedback, clear form, display success message and timeout function
     if (postReq.status === 200) {
       setDeleteSuccess(true);
       setname("");
@@ -89,6 +93,7 @@ const NewPokemon = () => {
             <div className={classes.actions}>
               <button>Add Pokemon</button>
             </div>
+            {/* success message */}
             {deleteSuccess && <div>Pokemon added!</div>}
           </div>
         </form>
