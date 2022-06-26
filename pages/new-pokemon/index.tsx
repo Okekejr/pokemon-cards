@@ -27,13 +27,14 @@ const NewPokemon = () => {
     setimageUrl(newimageUrl);
   };
 
-  // POST request to the API
+  // submit handler form function
   const saveData = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // storing the form data into an object
+    // storing the form states data into an object
     const data = { name, description, imageUrl };
 
+     // POST request to the API
     const postReq = await fetch(
       "https://us-central1-strangelove-challenge.cloudfunctions.net/cards",
       {
@@ -51,6 +52,7 @@ const NewPokemon = () => {
       setdescription("");
       setimageUrl("");
 
+      // setTimeout to remove the success message
       setTimeout(() => {
         setDeleteSuccess(false);
       }, 1500);
