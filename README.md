@@ -1,6 +1,6 @@
 # pokemon-Cards
 
-Pokemon cards renders the list of pokemons on page load from the API, which include names, descriptions and an image. It also gives you the feature to delete, and add pokemon cards to the list. Mobile friendly.
+Pokemon cards renders the list of pokemons on page load from the API, which include names, descriptions and an image. It also gives you the feature to delete, and add pokemon cards to the list. Mobile friendly with Great user experience.
 
 ## Installation (for standard modern project) and run project
 
