@@ -32,7 +32,7 @@ const NewPokemon = () => {
     event.preventDefault();
 
     // storing the form states data into an object
-    const data = { name, description, imageUrl };
+    const data = { description, name, imageUrl };
 
      // POST request to the API
     const postReq = await fetch(
