@@ -48,7 +48,7 @@ function Homepage() {
     );
 
     const del = await delreq.json();
-    
+
     // calling the GET to render the pokemon cards after the delete
     request();
   };
@@ -62,7 +62,7 @@ function Homepage() {
     );
   }
 
-  // render JSX component 
+  // render JSX component
   const renderList = (): JSX.Element[] => {
     return cards.map(({ id, imageUrl, description, name }) => {
       return (
