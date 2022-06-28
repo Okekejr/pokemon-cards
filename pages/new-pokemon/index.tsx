@@ -34,28 +34,32 @@ const NewPokemon = () => {
     // storing the form states data into an object
     const data = { description, name, imageUrl };
 
-     // POST request to the API
-    const postReq = await fetch(
-      "https://us-central1-strangelove-challenge.cloudfunctions.net/cards",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+    try {
+      // POST request to the API
+      const postReq = await fetch(
+        "https://us-central1-strangelove-challenge.cloudfunctions.net/cards",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+      const updatedData = await postReq.json();
+
+      // using IF statement to render user feedback, clear form, display success message and timeout function
+      if (postReq.status === 200) {
+        setDeleteSuccess(true);
+        setname("");
+        setdescription("");
+        setimageUrl("");
+
+        // setTimeout to remove the success message
+        setTimeout(() => {
+          setDeleteSuccess(false);
+        }, 1500);
       }
-    );
-    const updatedData = await postReq.json();
-
-    // using IF statement to render user feedback, clear form, display success message and timeout function
-    if (postReq.status === 200) {
-      setDeleteSuccess(true);
-      setname("");
-      setdescription("");
-      setimageUrl("");
-
-      // setTimeout to remove the success message
-      setTimeout(() => {
-        setDeleteSuccess(false);
-      }, 1500);
+    } catch (error) {
+      alert(error)
     }
   };
   return (

@@ -31,26 +31,34 @@ function Homepage() {
 
   // making the GET request to the API
   const request = async () => {
-    const response = await fetch(
-      "https://us-central1-strangelove-challenge.cloudfunctions.net/cards"
-    );
-    const data = await response.json();
-    setCards(data);
+    try {
+      const response = await fetch(
+        "https://us-central1-strangelove-challenge.cloudfunctions.net/cards"
+      );
+      const data = await response.json();
+      setCards(data);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   // delete request to the API using the ID from the API
   const deleteHandler = async (id: string) => {
-    const delreq = await fetch(
-      `https://us-central1-strangelove-challenge.cloudfunctions.net/cards/${id}`,
-      {
-        method: "DELETE",
-      }
-    );
+    try {
+      const delreq = await fetch(
+        `https://us-central1-strangelove-challenge.cloudfunctions.net/cards/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
-    const del = await delreq.json();
+      const del = await delreq.json();
 
-    // calling the GET to render the pokemon cards after the delete
-    request();
+      // calling the GET to render the pokemon cards after the delete
+      request();
+    } catch (error) {
+      alert(error);
+    }
   };
 
   // using the loading spinner in an IF statement for when the card state is empty or doesnt arrive quickly
