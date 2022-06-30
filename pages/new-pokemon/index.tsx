@@ -59,7 +59,7 @@ const NewPokemon = () => {
         }, 1500);
       }
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   };
   return (
@@ -90,7 +90,7 @@ const NewPokemon = () => {
               <label htmlFor="image">Image URL</label>
               <input
                 type="url"
-                required
+                required={true}
                 id="image"
                 value={imageUrl}
                 onChange={imageUrlHandler}
